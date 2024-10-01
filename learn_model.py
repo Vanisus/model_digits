@@ -37,12 +37,12 @@ def create_dataset(csv_file, base_path):
     return dataset
 
 # Пути к CSV-файлам
-train_csv = './labelTrain.csv'
-validation_csv = './labelTest.csv'
+train_csv = './labelsTrain.csv'
+validation_csv = './labelsTest.csv'
 
 # Базовые пути к изображениям
-train_base_path = './dataset/train'
-validation_base_path = './dataset/validation'
+train_base_path = '.'
+validation_base_path = '.'
 
 # Создание датасетов
 train_dataset = create_dataset(train_csv, train_base_path)

@@ -1,9 +1,11 @@
 import tensorflow as tf
 import numpy as np
 from tensorflow.keras.preprocessing import image
+import os
+
 
 # Загрузка сохраненной модели
-model = tf.keras.models.load_model('fine_tuned_model_digits.h5')
+model = tf.keras.models.load_model('fine_tuned_model_digits.keras')
 
 # Параметры изображения
 img_height, img_width = 224, 224
@@ -22,7 +24,11 @@ def predict_digit(img_path):
 
     return predicted_class
 
-# Пример использования функции
-img_path = './path_to_your_image.png'  # Замените на путь к вашему изображению
-predicted_digit = predict_digit(img_path)
-print(f'Предсказанная цифра: {predicted_digit}')
+
+directory_path = 'tests'
+for root, dirs, files in os.walk('tests'):
+    for file in files:
+        img_path = f'{directory_path}/{file}'  # Замените на путь к вашему изображению
+        predicted_digit = predict_digit(img_path)
+        print(f'Предсказанная цифра для файла {file}: {predicted_digit}')
+

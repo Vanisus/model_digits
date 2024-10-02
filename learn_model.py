@@ -10,7 +10,7 @@ import os
 # Параметры
 img_height, img_width = 224, 224
 batch_size = 32
-epochs = 10
+epochs = 3
 
 # Функция для загрузки и предобработки изображений
 def load_and_preprocess_image(path, label):

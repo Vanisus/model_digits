@@ -8,9 +8,9 @@ from tensorflow.keras.preprocessing import image
 import os
 
 # Параметры
-img_height, img_width = 224, 224
+img_height, img_width = 100, 100
 batch_size = 32
-epochs = 3
+epochs = 10
 
 # Функция для загрузки и предобработки изображений
 def load_and_preprocess_image(path, label):
